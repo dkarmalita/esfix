@@ -1,0 +1,24 @@
+.nyc_output
+coverage
+dist
+node_modules
+*.log
+*.pem
+*.bak.js
+*.bak.jsx
+*.bak.css
+*.bak.scss
+package-lock.json
+
+Makefile
+# project.todo
+make
+
+yarn.lock
+
+.DS_Store
+Thumbs.db
+
+.eslintcache
+TRASH
+*.tmp
