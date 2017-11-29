@@ -11,8 +11,8 @@
 const fs = require('fs')
 const colors = require('colors/safe')
 const {
-    extractOption,
     argExists,
+    extractOption,
 } = require('../lib/utils')
 const ESfixConfig = require('../lib/ESfixConfig')
 
