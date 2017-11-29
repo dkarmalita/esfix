@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "description": "Eslint CLI default configuration and fix utility.",
   "bugs": {
-    "url" : "https://github.com/dkarmalita/eslint/issues",
-    "email" : "project@hostname.com"
+    "url": "https://github.com/dkarmalita/eslint/issues",
+    "email": "project@hostname.com"
   },
   "main": "./bin/esfix.js",
   "scripts": {
-    "esfix": "node ./bin/esfix.js"
+    "esfix": "node ./bin/esfix.js",
+    "test": "mocha",
+    "nyc": "nyc mocha",
+    "nyc:report": "nyc report --reporter=lcov && open ./coverage/lcov-report/index.html"
   },
   "bin": {
     "esfix": "./bin/esfix.js"
@@ -18,14 +21,14 @@
     "eslint"
   ],
   "author": {
-    "name" : "Dmitriy Karmalita",
-    "email" : "dmitriy.karmalita@gmail.com",
-    "url" : "http://barnyrubble.tumblr.com/"
+    "name": "Dmitriy Karmalita",
+    "email": "dmitriy.karmalita@gmail.com",
+    "url": "http://barnyrubble.tumblr.com/"
   },
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/dkarmalita/eslint"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dkarmalita/eslint"
   },
   "engines": {
     "node": ">= 6.0.0",
@@ -35,7 +38,8 @@
     "files": [
       "bin/**/*.js",
       "config/**/*.js",
-      "lib/**/*.js"
+      "lib/**/*.js",
+      "test/**/*.js"
     ]
   },
   "dependencies": {
@@ -50,5 +54,10 @@
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-react": "7.5.1",
     "eslint-plugin-standard": "3.0.1"
+  },
+  "devDependencies": {
+    "chai": "4.1.2",
+    "mocha": "4.0.1",
+    "nyc": "11.3.0"
   }
 }

@@ -10,7 +10,11 @@
 
 const fs = require('fs')
 const colors = require('colors/safe')
-const { merge, extractOption, argExists } = require('../lib/utils')
+const {
+    extractOption,
+    argExists,
+} = require('../lib/utils')
+const ESfixConfig = require('../lib/ESfixConfig')
 
 /**
  * Put a config to console
@@ -38,10 +42,10 @@ const applyFile = (options, filePath, section) => {
 
     if (!argExists('--nolocals') && fs.existsSync(filePath)) {
 
-        options = merge(
+        options = new ESfixConfig(
             options,
             section ? require(filePath)[section] : require(filePath)
-        )
+        ).summarized
 
     }
 
@@ -112,25 +116,12 @@ if (argExists('--showconfig')) {
 if (argExists('--dryrun')) eslintConfig.fix = false
 
 // Take off file patterns in separate constant
-// Note: unusual options in config cause eslint errors
+// note: unusual options in config cause eslint errors
 const files = extractOption(eslintConfig, 'files')
 
 const cli = new CLIEngine(eslintConfig)
 const formatter = cli.getFormatter(eslintConfig.formatter || 'codeframe')
-
-// Avaliable Formatter options:
-// ===========================
-// var formatter = cli.getFormatter();  // “stylish” (the eslint default)
-// var formatter = cli.getFormatter("checkstyle");
-// var formatter = cli.getFormatter("codeframe");  // ?
-// var formatter = cli.getFormatter("compact"); // ?
-// var formatter = cli.getFormatter("html");
-// var formatter = cli.getFormatter("jslint-xml");
-// var formatter = cli.getFormatter("json");
-// var formatter = cli.getFormatter("junit");
-// var formatter = cli.getFormatter("table");   // ?
-// var formatter = cli.getFormatter("tap");
-// var formatter = cli.getFormatter("unix"); // ? == compact
+// note: list of formatters : https://eslint.org/docs/developer-guide/nodejs-api#getformatter
 
 // Run linting
 const report = cli.executeOnFiles(files || [ 'src/**/*.js', 'src/**/*.jsx' ])

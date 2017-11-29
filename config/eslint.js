@@ -1,11 +1,9 @@
 // Note: List of eslint rules with the fixable rules marked can be found here:
 // https://eslint.org/docs/rules/
 
-const { merge } = require('../lib/utils')
-
 const jsStandard = require('eslint-config-standard')
-
 const jsxStandard = require('eslint-config-standard-jsx')
+const ESfixConfig = require('../lib/ESfixConfig')
 
 const INDEND_SIZE = 4
 
@@ -38,7 +36,15 @@ const configUpdate = {
         'commonjs': true,
         'es6': true,
         'node': true,
+        'mocha': true,
     },
+    'envs': [
+        'browser',
+        'commonjs',
+        'es6',
+        'node',
+        'mocha',
+    ],
     'parser': 'babel-eslint',
     'parserOptions':
        { ecmaVersion: 2017,
@@ -341,20 +347,23 @@ const configUpdate = {
     'globals': [
     // note: There is a known bug about eslint 'globals'. https://stackoverflow.com/a/45776151
         '__DEV__',
-        'require',
-        'console',
-        'process',
-        'module',
-        'document',
-        'navigator',
-        'window',
-        'setTimeout',
-        'ArrayBuffer',
+        // 'require',
+        // 'console',
+        // 'process',
+        // 'module',
+        // 'document',
+        // 'navigator',
+        // 'window',
+        // 'setTimeout',
+        // 'ArrayBuffer',
+        'describe',
+        'it',
+        'xit',
     ],
 }
 
-module.exports = merge(
+module.exports = new ESfixConfig(
     jsStandard,
     jsxStandard,
     configUpdate
-)
+).summarized
