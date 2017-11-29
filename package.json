@@ -1,6 +1,6 @@
 {
   "name": "@kard/webpack-config",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Eslint CLI default configuration and fix utility.",
   "bugs": {
     "url": "https://github.com/dkarmalita/eslint/issues",
@@ -9,9 +9,10 @@
   "main": "./bin/esfix.js",
   "scripts": {
     "esfix": "node ./bin/esfix.js",
-    "test": "mocha",
-    "nyc": "nyc mocha",
-    "nyc:report": "nyc report --reporter=lcov && open ./coverage/lcov-report/index.html"
+    "nyc:check": "nyc check-coverage --lines 90 --functions 90 --branches 90",
+    "nyc:report": "nyc report --reporter=lcov && open ./coverage/lcov-report/index.html",
+    "nyc:test": "nyc mocha",
+    "test": "mocha"
   },
   "bin": {
     "esfix": "./bin/esfix.js"
@@ -22,8 +23,7 @@
   ],
   "author": {
     "name": "Dmitriy Karmalita",
-    "email": "dmitriy.karmalita@gmail.com",
-    "url": "http://barnyrubble.tumblr.com/"
+    "email": "dmitriy.karmalita@gmail.com"
   },
   "license": "MIT",
   "repository": {
