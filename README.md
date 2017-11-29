@@ -1,5 +1,8 @@
 # Esfix
 
+[![Build Status](https://travis-ci.org/dkarmalita/esfix.svg?branch=master)](https://travis-ci.org/dkarmalita/esfix)
+[![codecov](https://codecov.io/gh/dkarmalita/esfix/branch/master/graph/badge.svg)](https://codecov.io/gh/dkarmalita/esfix)
+
 **Table of Content**
 
 <!-- MarkdownTOC -->
