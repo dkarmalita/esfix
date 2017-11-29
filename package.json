@@ -1,9 +1,9 @@
 {
   "name": "@kard/esfix",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint CLI default configuration and fix utility.",
   "bugs": {
-    "url": "https://github.com/dkarmalita/eslint/issues",
+    "url": "https://github.com/dkarmalita/esfix/issues",
     "email": "project@hostname.com"
   },
   "main": "./bin/esfix.js",
@@ -28,7 +28,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dkarmalita/eslint"
+    "url": "https://github.com/dkarmalita/esfix"
   },
   "engines": {
     "node": ">= 6.0.0",
