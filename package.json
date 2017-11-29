@@ -10,7 +10,7 @@
   "scripts": {
     "esfix": "node ./bin/esfix.js",
     "nyc:check": "nyc check-coverage --lines 90 --functions 90 --branches 90",
-    "nyc:report": "nyc report --reporter=lcov && open ./coverage/lcov-report/index.html",
+    "nyc:report": "nyc report --reporter=lcov",
     "nyc:test": "nyc mocha",
     "test": "mocha"
   },
