@@ -1,5 +1,5 @@
 {
-  "name": "@kard/webpack-config",
+  "name": "@kard/esfix",
   "version": "1.0.0",
   "description": "Eslint CLI default configuration and fix utility.",
   "bugs": {
