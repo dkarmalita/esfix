@@ -11,6 +11,7 @@ before_script:
 script:
   - npm run nyc:test
   - npm run nyc:check
+  - npm run nyc:report
 after_success:
   - ./node_modules/.bin/codecov
 branches:
