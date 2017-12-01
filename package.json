@@ -1,6 +1,6 @@
 {
   "name": "@kard/esfix",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Eslint CLI default configuration and fix utility.",
   "bugs": {
     "url": "https://github.com/dkarmalita/esfix/issues",
