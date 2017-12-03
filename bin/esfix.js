@@ -48,7 +48,6 @@ const applyFile = (options, filePath, section) => {
         ).summarized
 
     }
-
     return options
 
 }
@@ -118,7 +117,6 @@ if (argExists('--dryrun')) eslintConfig.fix = false
 // Take off file patterns in separate constant
 // note: unusual options in config cause eslint errors
 const files = extractOption(eslintConfig, 'files')
-
 const cli = new CLIEngine(eslintConfig)
 const formatter = cli.getFormatter(eslintConfig.formatter || 'codeframe')
 // note: list of formatters : https://eslint.org/docs/developer-guide/nodejs-api#getformatter
